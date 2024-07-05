@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <title>Profile - {{ user.user.username }}</title>
+    <!-- <link rel="icon" href="images/fav.png" type="image/png" sizes="16x16"> -->
+
+    <link rel="stylesheet" href="{% static 'css/main.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/color.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+
+</head>
+<body>
+<!--<div class="se-pre-con"></div>-->
+<div class="theme-layout">
+
+</div>
+
+<section>
+
+    <div class="feature-photo">
+        <figure><img src="{% static 'images/resources/timeline-1.jpg' %}" alt=""></figure>
+        {#        <form>#}
+        {#            <div class="add-btn">#}
+        {#                <span style="color: white; font-size: 27px; margin-right: 520px;"><b><u><a#}
+        {#                        href="/">Home</a></u></b></span>#}
+        {#                <span style="color: white; font-size: 27px;"><b>Post count : {{ post_count }}</b></span>#}
+        {#                <span style="color: white; font-size: 27px;"><b>Follower count : {{ follower_count }}</b></span>#}
+        {#                <span style="color: white; font-size: 27px;"><b>Following count : {{ following_count }}</b></span>#}
+        {#                <a href="/follow?profile_id={{ user.id }}" title="" data-ripple="">#}
+        {#                    <button style="background-color: #ffc0cb; border: #ffc0cb;">Follow</button>#}
+        {#                </a>#}
+        {#                <a href="/follow?profile_id={{ user.id }}" title="" data-ripple="">#}
+        {#                    <button style="background-color: #ffc0cb; border: #ffc0cb;">Unfollow</button>#}
+        {#                </a>#}
+        {#                <span style="color: white; font-size: 27px;"><b>Post count : {{ post_count }}</b></span>#}
+        {#                <span style="color: white; font-size: 27px;"><b>Follower count : {{ follower_count }}</b></span>#}
+        {#                <span style="color: white; font-size: 27px;"><b>Following count : {{ following_count }}</b></span>#}
+        {##}
+        {#            </div>#}
+        {#        </form>#}
+
+        <!-- <form class="edit-phto">
+            <i class="fa fa-camera-retro"></i>
+            <label class="fileContainer">
+                Upload Cover Photo
+            <input type="file"/>
+            </label>
+        </form> -->
+
+        <div class="container-fluid">
+            <div class="row merged">
+                <div class="col-lg-2 col-sm-3">
+                    <div class="user-avatar">
+                        <figure>
+                            <img src="{{ user.profile_image.url }}"
+                                 style="height: 250px; width: 100%;" alt="">
+                            {#                            <form class="edit-phto">#}
+                            {#                                <i class="fa fa-camera-retro"></i>#}
+                            {#                                <label class="fileContainer">#}
+                            {#                                    <a href="#account-settings">Upload Profile Photo</a>#}
+                            {#                                </label>#}
+                            {#                            </form>#}
+                        </figure>
+                    </div>
+                </div>
+                <div class="col-lg-10 col-sm-9">
+                    <div class="timeline-info">
+                        <ul>
+                            <li class="admin-name">
+                                <h5 style="color: black;white-space: nowrap; width: 110px; font-size: 27px;">
+                                    <b>Username : {{ user.user.username }}</b>
+                                    <!--<i class="fa fa-check-circle" style="color: #48dbfb;" aria-hidden="true"></i>-->
+                                </h5>
+                                <!--<span>Group Admin</span>-->
+                            </li>
+                            <!--<li>
+                                <a class="" href="javascript:void(0)" title="" data-ripple="">Go live!</a>
+                                <a class="" href="javascript:void(0)" title="" data-ripple="">Music</a>
+                                <a class="" href="emporium/index-3.html" title="" data-ripple="">Emporium</a>
+                                <a class="" href="fitness/index.html" title="" data-ripple="">Health Inspection</a>
+                                <a class="" href="settings/account-setting.html" title="" data-ripple="">Settings</a>
+                                <a class="" href="javascript:void(0)" title="" data-ripple="">Upload</a>
+                                <a class="" href="time-line.html" title="" data-ripple="">time line</a>
+                                <a class="" href="timeline-photos.html" title="" data-ripple="">Photos</a>
+                                <a class="" href="timeline-videos.html" title="" data-ripple="">Videos</a>
+                                <a class="" href="timeline-friends.html" title="" data-ripple="">Friends</a>
+                                <a class="" href="timeline-groups.html" title="" data-ripple="">Groups</a>
+                                <a class="" href="about.html" title="" data-ripple="">about</a>
+                                <a class="" href="#" title="" data-ripple="">more</a>
+
+                            </li>-->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="">
+            Follower number : <strong> {{ follower_count }} || </strong>
+            Following number : <strong>{{ following_count }} || </strong>
+            Post number : <strong>{{ post_count }}</strong>
+            <a href="/follow?profile_id={{ user.id }}"
+               class="border border-gray-200 font-semibold px-4 py-1 rounded-full hover:bg-pink-600 hover:text-white hover:border-pink-600 ">
+                Follow || Unfollow </a>
+
+        </div>
+    </div>
+
+
+</section><!-- top area -->
+<section>
+    <div class="bio">
+
+    </div>
+</section>
+
+<section>
+    <div class="gap gray-bg">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row" id="page-contents">
+                        <div class="col-lg-3">
+                            <aside class="sidebar static">
+
+
+                            </aside>
+                        </div><!-- sidebar -->
+                        <div class="col-lg-6">
+                            <div class="central-meta">
+                                <ul class="photos">
+                                    {% for post in posts %}
+                                        <li>
+                                            <a class="strip"
+                                               href="https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png"
+                                               title="" data-strip-group="mygroup"
+                                               data-strip-group-options="loop: false">
+                                                <img src="{{ post.post_image.url }}"
+                                                     style="height: 250px; width: 300px;" alt=""></a>
+                                            Number of likes : {{ post.like_count }}
+                                            Number of comments : {{ post.comment_count }}
+                                        </li>
+
+                                    {% endfor %}
+                                </ul>
+                                <!--<div class="lodmore"><button class="btn-view btn-load-more"></button></div>-->
+                            </div><!-- photos -->
+                        </div><!-- centerl meta -->
+
+
+                        {#                        <div class="col-lg-6">#}
+                        {#                            <div class="central-meta">#}
+                        {#                                <ul class="photos">#}
+                        {##}
+                        {#                                    <li>#}
+                        {#                                        <a class="strip"#}
+                        {#                                           href="https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png"#}
+                        {#                                           title="" data-strip-group="mygroup" data-strip-group-options="loop: false">#}
+                        {#                                            <img src="https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png"#}
+                        {#                                                 style="height: 250px; width: 300px;" alt=""></a>#}
+                        {#                                    </li>#}
+                        {##}
+                        {#                                </ul>#}
+                        {#                                <!--<div class="lodmore"><button class="btn-view btn-load-more"></button></div>-->#}
+                        {#                            </div><!-- photos -->#}
+                        {#                            {% for post in posts %}#}
+                        {#                            <div id="{{ post.id }}" class="bg-white shadow rounded-md  -mx-2 lg:mx-0">#}
+                        {##}
+                        {#                                <!-- post header-->#}
+                        {#                                <div class="flex justify-between items-center px-4 py-3">#}
+                        {#                                    <div class="flex flex-1 items-center space-x-4">#}
+                        {#                                        <a href="/profile?profile_id={{ post.author.user.id }}">#}
+                        {#                                            <div class="bg-gradient-to-tr from-yellow-600 to-pink-600 p-0.5 rounded-full">#}
+                        {#                                                <img src="{{ post.author.profile_image.url }}"#}
+                        {#                                                     class="bg-gray-200 border border-white rounded-full w-8 h-8">#}
+                        {#                                            </div>#}
+                        {#                                        </a>#}
+                        {#                                        <span class="block capitalize font-semibold "> {{ post.author.user.username }} </span>#}
+                        {#                                    </div>#}
+                        {#                                    <div>#}
+                        {#                                        <a href="#"> <i#}
+                        {#                                                class="icon-feather-more-horizontal text-2xl hover:bg-gray-200 rounded-full p-2 transition -mr-1 "></i>#}
+                        {#                                        </a>#}
+                        {#                                        <div class="bg-white w-56 shadow-md mx-auto p-2 mt-12 rounded-md text-gray-500 hidden text-base border border-gray-100  "#}
+                        {#                                             uk-drop="mode: hover;pos: top-right">#}
+                        {##}
+                        {#                                            <ul class="space-y-1">#}
+                        {#                                                <li>#}
+                        {#                                                    <a href="#"#}
+                        {#                                                       class="flex items-center px-3 py-2 hover:bg-gray-200 hover:text-gray-800 rounded-md ">#}
+                        {#                                                        <i class="uil-share-alt mr-1"></i> Share#}
+                        {#                                                    </a>#}
+                        {#                                                </li>#}
+                        {#                                                <li>#}
+                        {#                                                    <a href="#"#}
+                        {#                                                       class="flex items-center px-3 py-2 hover:bg-gray-200 hover:text-gray-800 rounded-md ">#}
+                        {#                                                        <i class="uil-edit-alt mr-1"></i> Edit Post#}
+                        {#                                                    </a>#}
+                        {#                                                </li>#}
+                        {#                                                <li>#}
+                        {#                                                    <a href="#"#}
+                        {#                                                       class="flex items-center px-3 py-2 hover:bg-gray-200 hover:text-gray-800 rounded-md ">#}
+                        {#                                                        <i class="uil-comment-slash mr-1"></i> Disable comments#}
+                        {#                                                    </a>#}
+                        {#                                                </li>#}
+                        {#                                                <li>#}
+                        {#                                                    <a href="#"#}
+                        {#                                                       class="flex items-center px-3 py-2 hover:bg-gray-200 hover:text-gray-800 rounded-md ">#}
+                        {#                                                        <i class="uil-favorite mr-1"></i> Add favorites#}
+                        {#                                                    </a>#}
+                        {#                                                </li>#}
+                        {#                                                <li>#}
+                        {#                                                    <hr class="-mx-2 my-2 ">#}
+                        {#                                                </li>#}
+                        {#                                                <li>#}
+                        {#                                                    <a href="#"#}
+                        {#                                                       class="flex items-center px-3 py-2 text-red-500 hover:bg-red-100 hover:text-red-500 rounded-md ">#}
+                        {#                                                        <i class="uil-trash-alt mr-1"></i> Delete#}
+                        {#                                                    </a>#}
+                        {#                                                </li>#}
+                        {#                                            </ul>#}
+                        {##}
+                        {#                                        </div>#}
+                        {#                                    </div>#}
+                        {#                                </div>#}
+                        {##}
+                        {#                                <div uk-lightbox>#}
+                        {#                                    <a href="{{ post.post_image.url }}">#}
+                        {#                                        <img src="{{ post.post_image.url }} " alt="">#}
+                        {#                                    </a>#}
+                        {#                                    *******************************************************************************************#}
+                        {#                                    Like count : {{ post.like_count }}   | |#}
+                        {#                                    Comment count : {{ post.comment_count }}#}
+                        {##}
+                        {##}
+                        {#                                    *******************************************************************************************#}
+                        {#                                </div>#}
+                        {#                            </div><!-- centerl meta -->#}
+                        {#                            {% endfor %}#}
+                        {#                            <div class="col-lg-3">#}
+                        {#                                <aside class="sidebar static">#}
+                        {##}
+                        {#                                </aside>#}
+                        {#                            </div><!-- sidebar -->#}
+                        {#                        </div>#}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {#    <div class="lg:w-5/12">#}
+        {##}
+        {#        <div class="bg-white  shadow-md rounded-md overflow-hidden">#}
+        {##}
+        {#            <div class="bg-gray-50  border-b border-gray-100 flex items-baseline justify-between py-4 px-6 ">#}
+        {#                <h2 class="font-semibold text-lg">Users You Can Follow</h2>#}
+        {#                <a href="#"> Refresh</a>#}
+        {#            </div>#}
+        {##}
+        {#            <div class="divide-gray-300 divide-gray-50 divide-opacity-50 divide-y px-4 ">#}
+        {#                {% for profile in profiles %}#}
+        {#                    <div class="flex items-center justify-between py-3">#}
+        {#                        <div class="flex flex-1 items-center space-x-4">#}
+        {#                            <a href="/profile?profile_id={{ profile.id }}">#}
+        {#                                <img src="{{ profile.profile_image.url }}"#}
+        {#                                     class="bg-gray-200 rounded-full w-10 h-10">#}
+        {#                            </a>#}
+        {#                            <div class="flex flex-col">#}
+        {#                                <span class="block capitalize font-semibold"> {{ profile.user.username }} </span>#}
+        {#                                <span class="block capitalize text-sm"> {{ profile.follower_count }} </span>#}
+        {#                            </div>#}
+        {#                        </div>#}
+        {##}
+        {#                        <a href="/follow?profile_id={{ profile.id }}"#}
+        {#                           class="border border-gray-200 font-semibold px-4 py-1 rounded-full hover:bg-pink-600 hover:text-white hover:border-pink-600 ">#}
+        {#                            Follow </a>#}
+        {#                    </div>#}
+        {#                {% endfor %}#}
+        {##}
+        {##}
+        {#            </div>#}
+        {##}
+        {#        </div>#}
+        {##}
+        {##}
+    </div>
+</section>
+
+
+<script data-cfasync="false"
+        src="{% static '../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js' %}"></script>
+<script src="js/main.min.js"></script>
+<script src="{% static 'js/script.js' %}"></script>
+
+</body>
+
+
+</html>
